@@ -1,0 +1,16 @@
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\bin\Debug\RentalApplication.exe.config
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\bin\Debug\RentalApplication.exe
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\bin\Debug\RentalApplication.pdb
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.csproj.SuggestedBindingRedirects.cache
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.Form1.resources
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.Properties.Resources.resources
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.csproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.exe
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.pdb
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.AdminHomeForm.resources
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.LoginForm.resources
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.AdminAddAppliancesForm.resources
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.AdminEditAppliancesForm.resources
+C:\Users\ASUS\Desktop\Htet Aung\RentalApplication\RentalApplication\obj\Debug\RentalApplication.CustomerHomeForm.resources
