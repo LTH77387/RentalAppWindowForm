@@ -13,52 +13,60 @@ namespace RentalApplication
 {
     public partial class LoginForm : Form
     {
+        int attempts = 0;
         public LoginForm()
         {
             InitializeComponent();
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
-        {
+        {            
             if (txtUserName.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Please fill all fields!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                try
+                if(attempts >= 3)
                 {
-                    SqlConnection conn = new SqlConnection("Data Source=(local);Initial Catalog=Htet_Aung;Integrated Security=True");
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Name=@name AND Password=@password", conn);
-                    cmd.Parameters.AddWithValue("@name", txtUserName.Text);
-                    cmd.Parameters.AddWithValue("@password", txtPassword.Text);
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-                    conn.Close();
-                    if (dataTable.Rows.Count > 0)
+                    MessageBox.Show("You have exceed the maximum number of login fail!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }else
+                {
+                    try
                     {
-                        if (dataTable.Rows[0]["Role"].ToString().Trim() == "admin")
+                        SqlConnection conn = new SqlConnection("Data Source=(local);Initial Catalog=Htet_Aung;Integrated Security=True");
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Name=@name AND Password=@password", conn);
+                        cmd.Parameters.AddWithValue("@name", txtUserName.Text);
+                        cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        conn.Close();
+                        if (dataTable.Rows.Count > 0)
                         {
-                            AdminHomeForm adminHomeForm = new AdminHomeForm();
-                            adminHomeForm.Show();
-                            this.Hide();
+                            if (dataTable.Rows[0]["Role"].ToString().Trim() == "admin")
+                            {
+                                AdminHomeForm adminHomeForm = new AdminHomeForm();
+                                adminHomeForm.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                CustomerHomeForm customerHomeForm = new CustomerHomeForm();
+                                customerHomeForm.Show();
+                                this.Hide();
+                            }
                         }
                         else
                         {
-                            CustomerHomeForm customerHomeForm = new CustomerHomeForm();
-                            customerHomeForm.Show();
-                            this.Hide();
+                            MessageBox.Show("Login Fail", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            attempts+=1;
                         }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Login Fail", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message);
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
                 }
             }
         }

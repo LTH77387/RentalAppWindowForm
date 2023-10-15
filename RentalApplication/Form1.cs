@@ -97,7 +97,21 @@ namespace RentalApplication
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            txtPasswordErr.Hide();
+        }
 
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            if(txtPassword.TextLength < 8 )
+            {
+                txtPasswordErr.Show();
+                registerBtn.Enabled = false;
+            }
+            else
+            {
+                txtPasswordErr.Hide();
+                registerBtn.Enabled = true;
+            }
         }
     }
 }

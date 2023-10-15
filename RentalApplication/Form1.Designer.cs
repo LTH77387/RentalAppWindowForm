@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.registerBtn = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.txtPasswordErr = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -51,15 +52,16 @@
             // 
             this.txtUserName.Location = new System.Drawing.Point(343, 110);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(157, 22);
+            this.txtUserName.Size = new System.Drawing.Size(192, 22);
             this.txtUserName.TabIndex = 1;
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(343, 185);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(157, 22);
+            this.txtPassword.Size = new System.Drawing.Size(192, 22);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label2
             // 
@@ -81,7 +83,7 @@
             // 
             // registerBtn
             // 
-            this.registerBtn.Location = new System.Drawing.Point(414, 253);
+            this.registerBtn.Location = new System.Drawing.Point(449, 266);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(86, 35);
             this.registerBtn.TabIndex = 5;
@@ -92,7 +94,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(315, 320);
+            this.linkLabel1.Location = new System.Drawing.Point(350, 324);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(185, 16);
             this.linkLabel1.TabIndex = 7;
@@ -100,11 +102,22 @@
             this.linkLabel1.Text = "Don\'t  have an account? Login";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // txtPasswordErr
+            // 
+            this.txtPasswordErr.AutoSize = true;
+            this.txtPasswordErr.ForeColor = System.Drawing.Color.Red;
+            this.txtPasswordErr.Location = new System.Drawing.Point(340, 230);
+            this.txtPasswordErr.Name = "txtPasswordErr";
+            this.txtPasswordErr.Size = new System.Drawing.Size(195, 16);
+            this.txtPasswordErr.TabIndex = 8;
+            this.txtPasswordErr.Text = "Password must be 8 letters long";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtPasswordErr);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.registerBtn);
             this.Controls.Add(this.label3);
@@ -129,6 +142,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button registerBtn;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label txtPasswordErr;
     }
 }
 
